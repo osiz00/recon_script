@@ -76,7 +76,7 @@ echo -e "${GREEN}Httpx found $hostnames_count live hosts.${NC}"
 subdominator -l "$projectdir/hosts" | anew subdomains.takeovers
 # Waybackurls
 echo -e "${BLUE}Running Waybackurls...${NC}"
-cat "$projectdir/hosts" | waybackurls > "$projectdir/endpoints.txt"
+cat "$projectdir/hosts" | waybackurls | anew "$projectdir/endpoints.txt"
 endpoints_count=$(wc -l < "$projectdir/endpoints.txt")
 echo -e "${GREEN}Waybackurls found $endpoints_count endpoints.${NC}"
 
